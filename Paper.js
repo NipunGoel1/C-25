@@ -14,7 +14,7 @@ class Paper {
             var pos = this.body.position;
             var angle = this.body.angle
             push();            
-            imageMode(RADIUS)
+            imageMode(CENTER)
             image(this.image,pos.x,pos.y,this.width,this.width) 
             pop();
         }
