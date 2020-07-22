@@ -23,13 +23,14 @@ function setup() {
 
 
 	Engine.run(engine);
-	paper1 = new Paper(300,500,90,90);
+	paper1 = new Paper(300,700,90,90);
 	ground = new Ground(800,690,1600,20);
 	trashCan1= new TrashCan(1550,590,20,180);
 	trashCan2 = new TrashCan(1400,670,280,20);
 	trashCan3= new TrashCan(1250,590,20,180);
-	launcher = new Launcher(paper1.body,{x:300,y:200});
+	launcher = new Launcher(paper1.body,{x:300,y:500});
 	keyPressed();
+	mouseDragged();
 }
 
 
@@ -41,6 +42,7 @@ function draw() {
  
   trashCan3.display();
   launcher.display();
+
 }
 function keyPressed(){
 	if(keyCode === UP_ARROW){
@@ -48,6 +50,10 @@ function keyPressed(){
  launcher.fly();
 	}
 }
-
-
+function mouseDragged(){
+	Matter.Body.setPosition(paper1.body,{x:mouseX,y:mouseY})
+}
+function mouseReleased(){
+	launcher.fly();
+}
 

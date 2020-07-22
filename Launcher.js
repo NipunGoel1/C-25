@@ -11,9 +11,7 @@ class Launcher {
         World.add(world,this.launcher);
     }
     display(){
-        if(this.launcher.bodyA != null){
-
-        
+        if(this.launcher.bodyA != null){  
         var PointA = this.launcher.bodyA.position;
         var PointB = this.launcher.pointB;
         line(PointA.x,PointA.y,PointB.x,PointB.y)
